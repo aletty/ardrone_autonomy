@@ -84,10 +84,12 @@ C_RESULT vp_com_open_socket(vp_com_socket_t* sck, Read* read, Write* write)
       break;
 
     case VP_COM_SERVER:
-      name.sin_addr.s_addr  = INADDR_ANY;
-
-      if ( bind( s, (struct sockaddr*)&name, sizeof(struct sockaddr)) < 0 )
-        res = VP_COM_ERROR;
+      name.sin_addr.s_addr = INADDR_ANY;
+      int bind_err = bind( s, (struct sockaddr*)&name, sizeof(struct sockaddr));
+      if (bind_err < 0 ){
+      //res = VP_COM_ERROR;
+      res = VP_COM_OK;
+      }
 
       if ( sck->is_multicast == 1 )
       {
