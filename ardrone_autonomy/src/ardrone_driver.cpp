@@ -878,7 +878,6 @@ int main(int argc, char** argv)
         if(drone_ip_address)
         {
           printf("===================+> %s\n", drone_ip_address);
-          printf("test");
           strncpy( &wifi_ardrone_ip[0], drone_ip_address, ARDRONE_IPADDRESS_SIZE - 1);
         }
         else
