@@ -22,7 +22,7 @@ from PySide import QtCore, QtGui
 NameSpaces = []
 
 # define the default mapping between joystick buttons and their corresponding actions
-ButtonEmergency = 0
+ButtonEmergency = 8
 ButtonLand      = 1
 ButtonTakeoff   = 2
 ButtonFlattrim  = 7
@@ -95,8 +95,8 @@ if __name__=='__main__':
 	# 	subJoyList.append(rospy.Subscriber('j'+str(idx)+'/joy', Joy, ReceiveJoy, controllers))
 
 	rospy.Subscriber('j0/joy', Joy, ReceiveJoy, controllerList[0])
-	rospy.Subscriber('j1/joy', Joy, ReceiveJoy, controllerList[1])
-	rospy.Subscriber('j2/joy', Joy, ReceiveJoy, controllerList[2])
+	# rospy.Subscriber('j1/joy', Joy, ReceiveJoy, controllerList[1])
+	# rospy.Subscriber('j2/joy', Joy, ReceiveJoy, controllerList[2])
 
 	# executes the QT application
 	# display.show()
